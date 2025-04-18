@@ -116,3 +116,13 @@ Start the spring boot application
 
 
 ## Initialize DB schema
+Add schema.sql and db.sql files  
+Add mode always true in application yml file  
+
+```
+sql:  
+ init:  
+  mode: always  
+```
+
+## JDBC Template setup

@@ -6,9 +6,6 @@ spring:
     driverClassName: org.postgresql.Driver
     username: postgres
     password: changemeinprod!
-  sql:
-    init:
-      mode: always
 
 server:
   port: 8080
