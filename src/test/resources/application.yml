@@ -3,3 +3,9 @@ spring:
   name: springbasicmvn
 server:
   port: 8082
+
+pizza:
+  sauce: tomato
+  toppings: lamb
+  crust: masala
+

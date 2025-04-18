@@ -3,3 +3,8 @@ spring:
   name: springbasicmvn
 server:
   port: 8080
+
+pizza:
+  sauce: bbq
+  toppings: chicken
+  crust: stuffed
