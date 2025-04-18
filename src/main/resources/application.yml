@@ -1,5 +1,12 @@
 spring:
   application:
   name: springbasicmvn
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
 server:
   port: 8080
+

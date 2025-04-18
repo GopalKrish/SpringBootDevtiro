@@ -100,3 +100,10 @@ See config example in feature/configuration-and-properties
 ## Database Layers
 
  ![Database Layers](src/main/resources/images/img.png)
+
+# Connect H2 Database
+datasource:  
+    url: jdbc:h2:mem:testdb  
+    driverClassName: org.h2.Driver  
+    username: sa  
+    password: password  
