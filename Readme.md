@@ -95,5 +95,8 @@ or
 export=SERVER_PORT=8200  
 ./mvnw spring-boot:run
 
+Can add PIZZA_SAUCE=orange edit configuration
+
+![edit configuration](img.png)
 
  
