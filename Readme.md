@@ -114,3 +114,5 @@ Add docker-compose.yml file and add the postgresql database details
 Start the postgresql by docker-compose up
 Start the spring boot application
 
+
+## Initialize DB schema
