@@ -1,0 +1,5 @@
+spring:
+  application:
+  name: springbasicmvn
+server:
+  port: 8080
