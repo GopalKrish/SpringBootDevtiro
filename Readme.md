@@ -107,3 +107,10 @@ datasource:
     driverClassName: org.h2.Driver  
     username: sa  
     password: password  
+
+# Connect to Postgres SQL
+Need to install docker 
+Add docker-compose.yml file and add the postgresql database details
+Start the postgresql by docker-compose up
+Start the spring boot application
+
