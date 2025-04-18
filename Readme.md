@@ -95,5 +95,8 @@ or
 export=SERVER_PORT=8200  
 ./mvnw spring-boot:run
 
+See config example in feature/configuration-and-properties
 
- 
+## Database Layers
+
+ ![Database Layers](src/main/resources/images/img.png)
