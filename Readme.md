@@ -135,3 +135,4 @@ Data Access Object
 ## Integration Testing
 ## Find Many
 ## Full Update
+## Delete

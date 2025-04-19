@@ -51,6 +51,14 @@ public class AuthorDaoIml implements AuthorDao {
         );
     }
 
+    @Override
+    public void delete(long id) {
+        jdbcTemplate.update(
+                "DELETE from authors where id = ?",
+                id
+        );
+    }
+
     public static class AuthorRowMapper implements RowMapper<Author>{
 
         @Override

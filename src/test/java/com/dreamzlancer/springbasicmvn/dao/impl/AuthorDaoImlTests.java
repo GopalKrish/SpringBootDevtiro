@@ -64,4 +64,13 @@ public class AuthorDaoImlTests {
                 1L, "Jhon", 80, 3L
         );
     }
+
+    @Test
+    public void testThatDeleteGeneratesCorrectSql(){
+        underTest.delete(1L);
+        verify(jdbcTemplate).update(
+                "DELETE from authors where id = ?",
+                1L
+        );
+    }
 }
