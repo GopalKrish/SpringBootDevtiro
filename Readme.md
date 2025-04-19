@@ -131,3 +131,4 @@ JDBC template config used
 ## What is DAO?
 Data Access Object  
 ## Create DAO in TEST
+## Read One DAO
