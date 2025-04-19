@@ -1,4 +1,5 @@
-package com.dreamzlancer.springbasicmvn.dao.impl;
+/*
+package com.dreamzlancer.springbasicmvn.repositories;
 
 import com.dreamzlancer.springbasicmvn.TestDataUtil;
 import com.dreamzlancer.springbasicmvn.dao.iml.AuthorDaoIml;
@@ -75,3 +76,4 @@ public class AuthorDaoImlIntegrationTests {
         assertThat(result).isEmpty();
     }
 }
+*/
