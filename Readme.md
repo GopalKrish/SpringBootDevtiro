@@ -128,14 +128,17 @@ sql:
 ## JDBC Template setup
 JDBC template config used
 
-## What is DAO?
+### What is DAO?
 Data Access Object  
-## Create DAO in TEST
-## Read One DAO
-## Integration Testing
-## Find Many
-## Full Update
-## Delete
+### Create DAO in TEST
+### Read One DAO
+### Integration Testing
+#### Find Many
+### Full Update
+### Delete
 
-## JPA
+## JPA setup
 Add the jpa in pom.xml  
+
+### Create Entities
+
