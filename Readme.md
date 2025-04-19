@@ -136,3 +136,6 @@ Data Access Object
 ## Find Many
 ## Full Update
 ## Delete
+
+## JPA
+Add the jpa in pom.xml  
