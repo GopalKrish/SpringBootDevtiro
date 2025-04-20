@@ -162,4 +162,14 @@ spring:
 ### Custom query
 ### HQL
 
- 
+## Jackson
+Java object to jackson is marshalling  
+jackson to Java object is unmarshalling  
+
+### java object to JSON
+### Json to Java Object
+### Rename Json Properties
+### JSON Ignore
+
+## Rest API
+## Create Author Rest end point
