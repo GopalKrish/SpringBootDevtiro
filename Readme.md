@@ -160,5 +160,6 @@ spring:
 ### Find all
 ### Delete data
 ### Custom query
+### HQL
 
  
