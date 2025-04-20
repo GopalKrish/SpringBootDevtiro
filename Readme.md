@@ -120,9 +120,10 @@ Add schema.sql and db.sql files
 Add mode always true in application yml file  
 
 ```
-sql:  
- init:  
-  mode: always  
+spring: 
+ sql:  
+  init:  
+   mode: always  
 ```
 
 ## JDBC Template setup
@@ -142,3 +143,20 @@ Add the jpa in pom.xml
 
 ### Create Entities
 
+Start docker using docker-compose up. If docker has already configured then remove using docker-compose rm  
+s
+Add @Entity and @Table(name = "authors") annotation to pojo class to automatically convert pojo class to table in database.  
+
+### Hibernate Auto DDL
+Add the following in application.yml file 
+```
+spring:
+ jpa:  
+  hibernate:  
+   ddl-auto: update  
+```
+
+### Create and Read One
+
+
+ 
