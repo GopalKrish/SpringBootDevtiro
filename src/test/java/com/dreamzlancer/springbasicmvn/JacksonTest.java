@@ -19,7 +19,7 @@ public class JacksonTest {
                 .yearPublisher("2005")
                 .build();
         String result = objectMapper.writeValueAsString(book);
-        assertThat(result).isEqualTo("{\"isbn\":\"978-0-13-478627-1\",\"title\":\"The Engine of Eternity\",\"author\":\"Aria Montgonery\",\"yearPublisher\":\"2005\"}");
+        assertThat(result).isEqualTo("{\"isbn\":\"978-0-13-478627-1\",\"title\":\"The Engine of Eternity\",\"author\":\"Aria Montgonery\",\"year\":\"2005\"}");
 
     }
 
@@ -32,7 +32,7 @@ public class JacksonTest {
                 .yearPublisher("2005")
                 .build();
 
-        String json = "{\"isbn\":\"978-0-13-478627-1\",\"title\":\"The Engine of Eternity\",\"author\":\"Aria Montgonery\",\"yearPublisher\":\"2005\"}";
+        String json = "{\"isbn\":\"978-0-13-478627-1\",\"title\":\"The Engine of Eternity\",\"author\":\"Aria Montgonery\",\"year\":\"2005\"}";
         final ObjectMapper objectMapper = new ObjectMapper();
 
         Book result = objectMapper.readValue(json, Book.class);
