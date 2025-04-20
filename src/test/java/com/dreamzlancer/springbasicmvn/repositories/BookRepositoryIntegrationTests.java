@@ -29,9 +29,38 @@ public class BookRepositoryIntegrationTests {
     }
 
     @Test
-    public void testThatAuthorCanBeCreatedAndRecalled(){
+    public void testThatBookCanBeCreatedAndRecalled(){
         Author author = TestDataUtil.createTestAuthorA();
         Book book = TestDataUtil.createTestBookA(author);
+        book = underTest.save(book);
+        Optional<Book> result = underTest.findById(book.getIsbn());
+        assertThat(result).isPresent();
+        assertThat(result.get()).isEqualTo(book);
+    }
+
+    @Test
+    public void testThatMultipleBooksCanBeCreatedAndRecalled(){
+        Author authorA = TestDataUtil.createTestAuthorA();
+
+        Book bookA = TestDataUtil.createTestBookA(authorA);
+        bookA = underTest.save(bookA);
+
+        Book bookB = TestDataUtil.createTestBookB(authorA);
+        bookB = underTest.save(bookB);
+
+        Book bookC = TestDataUtil.createTestBookC(authorA);
+        bookC = underTest.save(bookC);
+
+        Iterable<Book> result = underTest.findAll();
+        assertThat(result).hasSize(3).containsExactly(bookA, bookB, bookC);
+    }
+
+    @Test
+    public void testThatBookCanBeUpdated(){
+        Author author = TestDataUtil.createTestAuthorA();
+        Book book = TestDataUtil.createTestBookA(author);
+        book = underTest.save(book);
+        book.setTitle("UPDATED");
         book = underTest.save(book);
         Optional<Book> result = underTest.findById(book.getIsbn());
         assertThat(result).isPresent();

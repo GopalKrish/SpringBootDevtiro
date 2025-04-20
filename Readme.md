@@ -157,6 +157,7 @@ spring:
 ```
 
 ### Create and Read One
+### Find all
 
 
  
