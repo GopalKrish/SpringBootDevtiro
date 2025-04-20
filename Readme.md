@@ -100,3 +100,66 @@ See config example in feature/configuration-and-properties
 ## Database Layers
 
  ![Database Layers](src/main/resources/images/img.png)
+
+# Connect H2 Database
+datasource:  
+    url: jdbc:h2:mem:testdb  
+    driverClassName: org.h2.Driver  
+    username: sa  
+    password: password  
+
+# Connect to Postgres SQL
+Need to install docker 
+Add docker-compose.yml file and add the postgresql database details
+Start the postgresql by docker-compose up
+Start the spring boot application
+
+
+## Initialize DB schema
+Add schema.sql and db.sql files  
+Add mode always true in application yml file  
+
+```
+spring: 
+ sql:  
+  init:  
+   mode: always  
+```
+
+## JDBC Template setup
+JDBC template config used
+
+### What is DAO?
+Data Access Object  
+### Create DAO in TEST
+### Read One DAO
+### Integration Testing
+#### Find Many
+### Full Update
+### Delete
+
+## JPA setup
+Add the jpa in pom.xml  
+
+### Create Entities
+
+Start docker using docker-compose up. If docker has already configured then remove using docker-compose rm  
+s
+Add @Entity and @Table(name = "authors") annotation to pojo class to automatically convert pojo class to table in database.  
+
+### Hibernate Auto DDL
+Add the following in application.yml file 
+```
+spring:
+ jpa:  
+  hibernate:  
+   ddl-auto: update  
+```
+
+### Create and Read One
+### Find all
+### Delete data
+### Custom query
+### HQL
+
+ 
