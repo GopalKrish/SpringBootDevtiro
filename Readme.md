@@ -162,4 +162,8 @@ spring:
 ### Custom query
 ### HQL
 
- 
+## Jackson
+Java object to jackson is marshalling  
+jackson to Java object is unmarshalling  
+
+### java object to JSON
