@@ -38,4 +38,20 @@ public class JacksonTest {
         Book result = objectMapper.readValue(json, Book.class);
         assertThat(result).isEqualTo(book);
     }
+
+    @Test
+    public void testThatObjectMapperCanIgnoreJsonObject() throws JsonProcessingException {
+        Book book = Book.builder()
+                .isbn("978-0-13-478627-1")
+                .title("The Engine of Eternity")
+                .author("Aria Montgonery")
+                .yearPublisher("2005")
+                .build();
+
+        String json = "{\"no\":\"123\",\"isbn\":\"978-0-13-478627-1\",\"title\":\"The Engine of Eternity\",\"author\":\"Aria Montgonery\",\"year\":\"2005\"}";
+        final ObjectMapper objectMapper = new ObjectMapper();
+
+        Book result = objectMapper.readValue(json, Book.class);
+        assertThat(result).isEqualTo(book);
+    }
 }
