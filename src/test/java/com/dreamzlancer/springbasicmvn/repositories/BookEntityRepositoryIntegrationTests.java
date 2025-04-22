@@ -31,7 +31,7 @@ public class BookEntityRepositoryIntegrationTests {
     @Test
     public void testThatBookCanBeCreatedAndRecalled(){
         AuthorEntity authorEntity = TestDataUtil.createTestAuthorA();
-        BookEntity bookEntity = TestDataUtil.createTestBookA(authorEntity);
+        BookEntity bookEntity = TestDataUtil.createTestBookEntityA(authorEntity);
         bookEntity = underTest.save(bookEntity);
         Optional<BookEntity> result = underTest.findById(bookEntity.getIsbn());
         assertThat(result).isPresent();
@@ -42,7 +42,7 @@ public class BookEntityRepositoryIntegrationTests {
     public void testThatMultipleBooksCanBeCreatedAndRecalled(){
         AuthorEntity authorEntityA = TestDataUtil.createTestAuthorA();
 
-        BookEntity bookEntityA = TestDataUtil.createTestBookA(authorEntityA);
+        BookEntity bookEntityA = TestDataUtil.createTestBookEntityA(authorEntityA);
         bookEntityA = underTest.save(bookEntityA);
 
         BookEntity bookEntityB = TestDataUtil.createTestBookB(authorEntityA);
@@ -58,7 +58,7 @@ public class BookEntityRepositoryIntegrationTests {
     @Test
     public void testThatBookCanBeUpdated(){
         AuthorEntity authorEntity = TestDataUtil.createTestAuthorA();
-        BookEntity bookEntity = TestDataUtil.createTestBookA(authorEntity);
+        BookEntity bookEntity = TestDataUtil.createTestBookEntityA(authorEntity);
         bookEntity = underTest.save(bookEntity);
         bookEntity.setTitle("UPDATED");
         bookEntity = underTest.save(bookEntity);
@@ -70,7 +70,7 @@ public class BookEntityRepositoryIntegrationTests {
     @Test
     public void testThatBookCanBeDeleted(){
         AuthorEntity authorEntity = TestDataUtil.createTestAuthorA();
-        BookEntity bookEntity = TestDataUtil.createTestBookA(authorEntity);
+        BookEntity bookEntity = TestDataUtil.createTestBookEntityA(authorEntity);
         bookEntity = underTest.save(bookEntity);
         underTest.delete(bookEntity);
         Optional<BookEntity> result = underTest.findById(bookEntity.getIsbn());
