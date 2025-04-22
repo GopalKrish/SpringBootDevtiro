@@ -174,3 +174,9 @@ jackson to Java object is unmarshalling
 ## Rest API
 ## Create Author Rest end point
 ## Create Book Rest end point
+## Get Author
+## Get Books
+## Update Author
+## Update Books
+## Get List of Author
+## Get List of Books
