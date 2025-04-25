@@ -4,6 +4,7 @@ import com.dreamzlancer.springbasicmvn.TestDataUtil;
 import com.dreamzlancer.springbasicmvn.domain.dto.AuthorDto;
 import com.dreamzlancer.springbasicmvn.domain.entities.AuthorEntity;
 import com.dreamzlancer.springbasicmvn.services.AuthorService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -181,4 +182,43 @@ public class AuthorControllerIntegrationTests {
         );
     }
 
+    @Test
+    public void testThatPartialUpdateExistingAuthorReturnsHttpStatus200Ok() throws Exception {
+        AuthorEntity testAuthorEntity = TestDataUtil.createTestAuthorEntityA();
+        testAuthorEntity.setId(null);
+        AuthorEntity savedAuthorEntity = authorService.save(testAuthorEntity);
+
+        AuthorDto testAuthorDto = TestDataUtil.createTestAuthorDtoA();
+        testAuthorDto.setName("UPDATED");
+        String authorDtoJson = objectMapper.writeValueAsString(testAuthorDto);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.patch("/authors/"+ savedAuthorEntity.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(authorDtoJson)
+        ).andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
+    @Test
+    public void testThatPartialUpdateExistingAuthorReturnsUpdatedAuthor() throws Exception {
+        AuthorEntity testAuthorEntity = TestDataUtil.createTestAuthorEntityA();
+        testAuthorEntity.setId(null);
+        AuthorEntity savedAuthorEntity = authorService.save(testAuthorEntity);
+
+        AuthorDto testAuthorDto = TestDataUtil.createTestAuthorDtoA();
+        testAuthorDto.setName("UPDATED");
+        String authorDtoJson = objectMapper.writeValueAsString(testAuthorDto);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.patch("/authors/"+ savedAuthorEntity.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(authorDtoJson)
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.id").value(savedAuthorEntity.getId())
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.name").value("UPDATED")
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.age").value(testAuthorDto.getAge())
+        );
+    }
 }
