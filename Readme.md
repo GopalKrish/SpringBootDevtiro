@@ -171,20 +171,20 @@ jackson to Java object is unmarshalling
 ### Rename Json Properties
 ### JSON Ignore
 
-## Rest API
-## Create Author Rest end point
-## Create Book Rest end point
-## Get Author
-## Get Books
-## Update Author
-## Update Books
-## Get List of Author
-## Get List of Books
-## Author Read One
-## Book Read One
-## Author Full Update
-## Book Full Update
-## Author Partial Update
-## Book Partial Update
-## Author Delete
-## Delete Book
+### Rest API
+### Create Author Rest end point
+### Create Book Rest end point
+### Get Author
+### Get Books
+### Update Author
+### Update Books
+### Get List of Author
+### Get List of Books
+### Author Read One
+### Book Read One
+### Author Full Update
+### Book Full Update
+### Author Partial Update
+### Book Partial Update
+### Author Delete
+### Delete Book
