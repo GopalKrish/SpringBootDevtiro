@@ -187,3 +187,4 @@ jackson to Java object is unmarshalling
 ## Author Partial Update
 ## Book Partial Update
 ## Author Delete
+## Delete Book
