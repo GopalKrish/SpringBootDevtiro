@@ -4,7 +4,6 @@ import com.dreamzlancer.springbasicmvn.TestDataUtil;
 import com.dreamzlancer.springbasicmvn.domain.dto.AuthorDto;
 import com.dreamzlancer.springbasicmvn.domain.entities.AuthorEntity;
 import com.dreamzlancer.springbasicmvn.services.AuthorService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -220,5 +219,25 @@ public class AuthorControllerIntegrationTests {
         ).andExpect(
                 MockMvcResultMatchers.jsonPath("$.age").value(testAuthorDto.getAge())
         );
+    }
+
+    @Test
+    public void testThatDeleteAuthorReturnsHttpStatus204() throws Exception {
+        mockMvc.perform(
+                MockMvcRequestBuilders.delete("/authors/" + 999)
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(MockMvcResultMatchers.status().isNoContent());
+    }
+
+    @Test
+    public void testThatDeleteAuthorReturnsHttpStatus204ForExistingAuthor() throws Exception {
+        AuthorEntity testAuthorEntity = TestDataUtil.createTestAuthorEntityA();
+        testAuthorEntity.setId(null);
+        AuthorEntity savedAuthorEntity = authorService.save(testAuthorEntity);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.delete("/authors/" + savedAuthorEntity.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(MockMvcResultMatchers.status().isNoContent());
     }
 }

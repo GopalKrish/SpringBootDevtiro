@@ -186,3 +186,4 @@ jackson to Java object is unmarshalling
 ## Book Full Update
 ## Author Partial Update
 ## Book Partial Update
+## Author Delete
