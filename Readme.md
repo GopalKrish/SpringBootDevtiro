@@ -191,3 +191,13 @@ jackson to Java object is unmarshalling
 
 ### Nested object - ModelMapper
 ### Pagination
+
+## Deployment
+Add DockerFile  
+mvn clean package  
+docker build . -t dreamzlancer/books  
+docker image ls  
+docker-compose up --build  
+
+The docker-compose used for multi container run
+The docker run used for single container
